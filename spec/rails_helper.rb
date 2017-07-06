@@ -54,4 +54,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  
+  # https://stackoverflow.com/questions/38421853/why-is-my-rspec-not-loading-devisetestcontrollerhelpers
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end

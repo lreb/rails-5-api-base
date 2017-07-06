@@ -18,7 +18,7 @@ class V1::ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      render json: @project, status: :created, location: @project
+      render json: @project, status: :created
     else
       render json: @project.errors, status: :unprocessable_entity
     end

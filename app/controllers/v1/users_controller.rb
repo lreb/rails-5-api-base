@@ -1,6 +1,8 @@
 class V1::UsersController < ApplicationController
   	def create
-  		puts user_params
+  		puts "params"
+  		puts user_params[:email]
+  		puts user_params[:password]
 	  user = User.new(user_params)
 
 	  if user.save

@@ -1,6 +1,6 @@
 class AuthenticateUser 
 	prepend SimpleCommand 
-
+	# takes the parameters and initializes a class instance
 	def initialize(email, password) 
 		puts password
 		@email = email 
@@ -22,12 +22,13 @@ class AuthenticateUser
 	private 
 
 	attr_accessor :email, :password 
-
+	# uses the credentials to check if the user exists in the database
 	def user
 	puts "user method"
-	puts password 
 		user = User.find_by_email(email)
+		# If everything is true, the user will be returned
 		return user if user&.valid_password?(password) #user && user.authenticate(password) 
+		# If not, the method will return nil
 		errors.add :user_authentication, 'invalid credentials' 
 		nil 
 	end 

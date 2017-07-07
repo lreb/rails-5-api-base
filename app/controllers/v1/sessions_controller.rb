@@ -1,5 +1,5 @@
 class V1::SessionsController < ApplicationController
-  skip_before_action :authenticate_request
+  skip_before_action :authenticate_request!, :except => [:create]
 
   def create
     command = AuthenticateUser.call(params[:email], params[:password])

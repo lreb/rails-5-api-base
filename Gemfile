@@ -17,8 +17,8 @@ gem 'puma', '~> 3.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
+gem 'bcrypt', '~> 3.1.7'
+#gem 'devise'
 # encoding and decoding of HMACSHA256 tokens available in the Rails application
 gem 'jwt'
 gem 'simple_command'

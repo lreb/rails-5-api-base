@@ -27,7 +27,7 @@ class AuthenticateUser
 	puts "user method"
 		user = User.find_by_email(email)
 		# If everything is true, the user will be returned
-		return user if user&.valid_password?(password) #user && user.authenticate(password) 
+		return user if user && user.authenticate(password) #user&.authenticate?(password) #user && user.authenticate(password) 
 		# If not, the method will return nil
 		errors.add :user_authentication, 'invalid credentials' 
 		nil 

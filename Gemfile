@@ -19,6 +19,8 @@ gem 'puma', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'jwt'
+gem 'simple_command'
 #gem 'simple_token_authentication', '~> 1.0'
 
 # Use Capistrano for deployment

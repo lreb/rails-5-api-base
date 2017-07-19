@@ -1,6 +1,6 @@
 class V1::UsersController < ApplicationController
-	skip_before_action :authenticate_user!, raise: false
-
+	#skip_before_action :authenticate_user!, raise: false
+	skip_before_action :authenticate_request
   	def create
   		puts "params"
   		puts user_params[:email]

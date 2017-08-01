@@ -9,8 +9,12 @@ class AuthenticateUser
 	end 
 
 	def call 
+		#custome payload
 		JsonWebToken.encode(
-			user_id: user.id 
+			user_id: user.id, 
+			"iss": "facware.com",
+			"name": "Elma canon prieto",
+			"admin": true
 			#name: "#{user.name} #{user.last_name}",
 			#profile: user.profile_picture,
 			#has_photo: user.profile_picture.blank? ? false : true,

@@ -4,7 +4,12 @@ class V1::SessionsController < ApplicationController
   def create
     command = AuthenticateUser.call(params[:email], params[:password])
     if command.success? 
-      render json: { auth_token: command.result } 
+      #return intial data after signup
+      render json: { 
+        Bearer_jwt: command.result, 
+        user_id: JsonWebToken.decode(command.result)[:user_id],
+        expiration: JsonWebToken.decode(command.result)[:exp],
+        } 
     else 
       render json: { error: command.errors }, status: :unauthorized 
     end

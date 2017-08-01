@@ -1,6 +1,4 @@
 class V1::UsersController < ApplicationController
-	#skip_before_action :authenticate_user!, raise: false
-	#before_action :authenticate_user, except: [:create]
 	skip_before_filter :authenticate_request, :only => [:create]
 
   	def create

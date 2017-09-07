@@ -3,6 +3,7 @@ class V1::UsersController < ApplicationController
 
   	def create
   		puts "params"
+  		puts user_params.to_json
   		puts user_params[:email]
   		puts user_params[:password]
   	  if((User.find_by email: user_params[:email]) != nil)
@@ -21,6 +22,6 @@ class V1::UsersController < ApplicationController
 	private
 
 	def user_params
-	  params.require(:user).permit(:name, :surname, :born_date, :email, :password)
+	  params.permit(:name, :surname, :born_date, :email, :password, :password_confirmation)
 	end
 end

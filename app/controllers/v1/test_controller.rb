@@ -5,6 +5,26 @@ class V1::TestController < ApplicationController
 		render json: @test_items, status: :ok	
 	end
 
+	# POST /projects
+  def create
+    @project = TestItem.new(project_params)
+
+    if @project.save
+      render json: @project, status: :created
+    else
+      render json: @project.errors, status: :unprocessable_entity
+    end
+  end
+  private
+  	# Use callbacks to share common setup or constraints between actions.
+    def set_test_item
+      @project = TestItem.find(params[:id])
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def project_params
+      params.permit(:name, :date)
+    end
 end
 =begin
 1xx Informational

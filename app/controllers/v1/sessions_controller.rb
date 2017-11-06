@@ -6,7 +6,7 @@ class V1::SessionsController < ApplicationController
     if command.success? 
       #return intial data after signup
       render json: { 
-        Bearer_jwt: command.result, 
+        jwt_token: command.result, 
         user_id: JsonWebToken.decode(command.result)[:user_id],
         expiration: JsonWebToken.decode(command.result)[:exp],
         } 

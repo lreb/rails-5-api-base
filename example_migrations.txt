@@ -1,0 +1,6 @@
+
+USER
+rails g scaffold user name:string born_date:date surname:string email password_digest
+
+TEST
+rails g scaffold test_item name:string date:datetime

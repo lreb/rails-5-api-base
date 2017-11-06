@@ -1,0 +1,17 @@
+
+USER
+rails g scaffold user name:string born_date:date surname:string email password_digest
+
+TEST
+rails g scaffold test_item name:string date:datetime
+
+
+====== Time =====
+# Configurations
+Time.zone = utc
+
+# Input
+my_time = Time.parse('user time').in_time_zone
+
+# Output
+my_time.in_time_zone("Chihuahua")

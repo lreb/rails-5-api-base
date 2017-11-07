@@ -38,6 +38,8 @@ module ApiTasker
     end
 
     config.middleware.use Rack::Attack
+
+    #config.time_zone = 'Chihuahua'
     
   end
 end

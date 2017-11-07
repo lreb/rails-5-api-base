@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   #devise_for :users, :controllers => {:user => "v1/users"}
   
   #resources :projects
@@ -9,5 +10,6 @@ Rails.application.routes.draw do
   	resources :sessions, only: [:create, :destroy]
   	resources :test
   	resources :projects
+  	resources :system_collections
   end 
 end

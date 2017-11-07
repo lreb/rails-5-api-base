@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   #devise_for :users, :controllers => {:user => "v1/users"}
   
   #resources :projects
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   	resources :test
   	resources :projects
   	resources :system_collections
+    resources :subscriptions
   end 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107225623) do
+ActiveRecord::Schema.define(version: 20171108002346) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 20171107225623) do
     t.string   "image"
     t.integer  "gender_id"
     t.boolean  "deleted"
+  end
+
+  create_table "users_subscriptions", force: :cascade do |t|
+    t.integer  "user_id",                         null: false
+    t.integer  "subscription_id",                 null: false
+    t.boolean  "is_admin",        default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.index ["subscription_id"], name: "index_users_subscriptions_on_subscription_id"
+    t.index ["user_id"], name: "index_users_subscriptions_on_user_id"
   end
 
 end

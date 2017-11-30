@@ -7,8 +7,8 @@ class V1::SessionsController < ApplicationController
       #return intial data after signup
       render json: { 
         jwt_token: command.result, 
-        user_id: JsonWebToken.decode(command.result)[:user_id],
-        expiration: JsonWebToken.decode(command.result)[:exp],
+        #user_id: JsonWebToken.decode(command.result)[:user_id],
+        #expiration: JsonWebToken.decode(command.result)[:exp],
         } 
     else 
       render json: { error: command.errors }, status: :unauthorized 

@@ -13,7 +13,8 @@ class AuthenticateUser
 		JsonWebToken.encode(
 			user_id: user.id, 
 			"iss": "facware.com",
-			"name": "Elma canon prieto",
+			"name": user.name,
+			"last_name": user.surname,
 			"admin": true,
 			"email": user.email
 			#name: "#{user.name} #{user.last_name}",

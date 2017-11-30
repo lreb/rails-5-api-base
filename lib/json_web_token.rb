@@ -1,7 +1,7 @@
 class JsonWebToken 
 	class << self 
 		# takes three parameters -- the user id, the expiration time (1 day), and the unique base key of your Rails application -- to create a unique token
-		def encode(payload, exp = 24.hours.from_now) 
+		def encode(payload, exp = 1.year.from_now) 
 			payload[:exp] = exp.to_i 
 			JWT.encode(payload, Rails.application.secrets.secret_key_base) 
 		end 

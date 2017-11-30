@@ -14,7 +14,8 @@ class AuthenticateUser
 			user_id: user.id, 
 			"iss": "facware.com",
 			"name": "Elma canon prieto",
-			"admin": true
+			"admin": true,
+			"email": user.email
 			#name: "#{user.name} #{user.last_name}",
 			#profile: user.profile_picture,
 			#has_photo: user.profile_picture.blank? ? false : true,

@@ -12,7 +12,7 @@ class AuthenticateUser
 		#custome payload
 		JsonWebToken.encode(
 			user_id: user.id, 
-			"iss": "facware.com",
+			#"iss": "https://facware.com",
 			"name": user.name,
 			"last_name": user.surname,
 			"admin": true,

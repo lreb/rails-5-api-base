@@ -1,5 +1,5 @@
 class V1::UsersController < ApplicationController
-	skip_before_filter :authenticate_request, :only => [:create]
+	skip_before_action :authenticate_request, :only => [:create]
 
   	def create
   	  if((User.find_by email: user_params[:email]) != nil)
@@ -7,6 +7,7 @@ class V1::UsersController < ApplicationController
   	  else
   		user = User.new(user_params)
 		if user.save
+		  #SessionsController.create(user_params[:email],user_params[:password])
 		  render json: {status: 'User created successfully'}, status: :created
 		else
 		  render json: { errors: user.errors.full_messages }, status: :bad_request

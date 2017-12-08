@@ -8,6 +8,7 @@ class V1::UsersController < ApplicationController
   		user = User.new(user_params)
 		if user.save
 		  #SessionsController.create(user_params[:email],user_params[:password])
+		  UserMailer.registration_confirmation(user).deliver
 		  render json: {status: 'User created successfully'}, status: :created
 		else
 		  render json: { errors: user.errors.full_messages }, status: :bad_request

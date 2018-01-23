@@ -54,8 +54,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
      :address => "smtp.zoho.com",
      :port => 587,
-     :user_name => "contact@facware.com",
-     :password => "contactFacware*",
+     :user_name => ENV["FACWARE_CONTACT_MAIL"],
+     :password => ENV["FACWARE_CONTACT_PASSWORD"],
      :authentication => :plain,
      :enable_starttls_auto => true
   }

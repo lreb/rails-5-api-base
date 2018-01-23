@@ -10,58 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108002346) do
+ActiveRecord::Schema.define(version: 20180110193207) do
 
-  create_table "projects", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "subscriptions", force: :cascade do |t|
-    t.string   "name",       default: "my subscription"
-    t.boolean  "deleted",    default: false
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-  end
-
-  create_table "system_collections", force: :cascade do |t|
-    t.string   "internal_name"
-    t.string   "external_name"
-    t.string   "type"
-    t.boolean  "deleted"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "test_items", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "date"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "surname"
-    t.date     "born_date"
+  create_table "logins", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "image"
-    t.integer  "gender_id"
-    t.boolean  "deleted"
-  end
-
-  create_table "users_subscriptions", force: :cascade do |t|
-    t.integer  "user_id",                         null: false
-    t.integer  "subscription_id",                 null: false
-    t.boolean  "is_admin",        default: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.index ["subscription_id"], name: "index_users_subscriptions_on_subscription_id"
-    t.index ["user_id"], name: "index_users_subscriptions_on_user_id"
+    t.string   "user_name"
+    t.boolean  "active",          default: true
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
 end

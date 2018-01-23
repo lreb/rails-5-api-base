@@ -1,5 +1,6 @@
 
 USER
+rails g scaffold login email password_digest user_name:string active:boolean
 rails g scaffold user name:string born_date:date surname:string email password_digest
 
 TEST
@@ -19,3 +20,16 @@ my_time.in_time_zone("Chihuahua")
 http://danilenko.org/2012/7/6/rails_timezones/
 
 Time.zone.now
+
+
+class CreateLogin < ActiveRecord::Migration[5.0]
+  def change
+    create_table :logins do |t|
+      t.string :user_name
+      t.string :email
+      t.string :password_digest
+      t.boolean :active, :default => :active
+      t.timestamps
+    end
+  end
+end

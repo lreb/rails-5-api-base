@@ -13,9 +13,9 @@ class AuthenticateUser
 		JsonWebToken.encode(
 			user_id: user.id, 
 			#"iss": "https://facware.com",
-			"name": user.name,
-			"last_name": user.surname,
-			"admin": true,
+			#{}"name": user.name,
+			#{}"last_name": user.surname,
+			#{}"admin": true,
 			"email": user.email
 			#name: "#{user.name} #{user.last_name}",
 			#profile: user.profile_picture,
@@ -31,7 +31,7 @@ class AuthenticateUser
 	# uses the credentials to check if the user exists in the database
 	def user
 	puts "user method"
-		user = User.find_by_email(email)
+		user = Login.find_by_email(email)
 		# If everything is true, the user will be returned
 		return user if user && user.authenticate(password) #user&.authenticate?(password) #user && user.authenticate(password) 
 		# If not, the method will return nil
